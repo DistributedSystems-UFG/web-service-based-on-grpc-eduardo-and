@@ -18,6 +18,10 @@ service EmployeeService {
   rpc DeleteEmployee (EmployeeID) returns (StatusReply) {}
   // List all employees
   rpc ListAllEmployees (EmptyMessage) returns (EmployeeDataList) {}
+  // Get the highest salary
+  rpc HighestSalary (EmptyMessage) returns (EmployeeData) {}
+  // Get the lowest salary
+  rpc LowestSalary (EmptyMessage) returns (EmployeeData) {}
   
 }
 
@@ -25,6 +29,7 @@ message EmployeeData {
   uint32 id = 1;
   string name = 2;
   string title = 3;
+  float salary = 4;
 }
 
 message StatusReply {
